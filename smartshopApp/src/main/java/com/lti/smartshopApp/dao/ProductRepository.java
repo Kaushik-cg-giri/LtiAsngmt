@@ -14,9 +14,9 @@ import com.lti.smartshopApp.model.Products;
 @Transactional
 public interface ProductRepository extends JpaRepository<Products, Long> {
 
-	@Query(value="select c from Products where c.category=?1")
+	@Query(value="select p from Products p where p.category=?1")
 	Optional<Products> findbyCategory(String category);
 	
-	@Query(value="select c from Products where c.name=?1")
+	@Query(value="select p from Products where p.name=?1")
 	 Optional<Products> findbyName(String name);
 }
